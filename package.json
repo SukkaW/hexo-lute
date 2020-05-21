@@ -1,0 +1,37 @@
+{
+  "name": "hexo-renderer-lute",
+  "version": "2.0.2",
+  "description": "Add nofollow attribute to all external links automatically",
+  "main": "index.js",
+  "directories": {
+    "lib": "./lib"
+  },
+  "files": [
+    "lib/",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">= 8.6.0"
+  },
+  "scripts": {
+    "eslint": "eslint .",
+    "test": "mocha test/index.js"
+  },
+  "repository": "sukkaw/hexo-renderer-lute",
+  "keywords": [
+    "hexo",
+    "hexo-plugin",
+    "hexo-renderer",
+    "markdown"
+  ],
+  "author": "SukkaW (https://skk.moe",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.2.2",
+    "eslint-config-hexo": "^3.0.0",
+    "hexo": "hexojs/hexo",
+    "hexo-util": "^2.1.0",
+    "mocha": "^7.1.2"
+  }
+}

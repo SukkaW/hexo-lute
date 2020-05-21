@@ -171,18 +171,44 @@ describe('Benchmark', () => {
   const fixture = require('./fixture');
   let text = '';
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 15; i++) {
     text = text + '\n' + fixture;
   }
 
   const r = require('../lib/renderer').bind(hexo);
   const r2 = require('hexo-renderer-marked/lib/renderer').bind(hexo);
 
-  it('hexo-lute', () => {
+  it('hexo-lute - normal snippet', () => {
+    r({ text: fixture });
+    r({ text: fixture });
+    r({ text: fixture });
+    r({ text: fixture });
+    r({ text: fixture });
+    r({ text: fixture });
+    r({ text: fixture });
+    r({ text: fixture });
+    r({ text: fixture });
+    r({ text: fixture });
+  });
+
+  it('hexo-renderer-marked - normal snippet', () => {
+    r2({ text: fixture });
+    r2({ text: fixture });
+    r2({ text: fixture });
+    r2({ text: fixture });
+    r2({ text: fixture });
+    r2({ text: fixture });
+    r2({ text: fixture });
+    r2({ text: fixture });
+    r2({ text: fixture });
+    r2({ text: fixture });
+  });
+
+  it('hexo-lute - large snippet', () => {
     r({ text });
   });
 
-  it('hexo-renderer-marked', () => {
+  it('hexo-renderer-marked - large snippet', () => {
     r2({ text });
   });
 });

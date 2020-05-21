@@ -164,3 +164,25 @@ describe('Marked renderer', () => {
     ].join('\n'));
   });
 });
+
+describe('Benchmark', () => {
+  const hexo = new Hexo(__dirname, {silent: true});
+
+  const fixture = require('./fixture');
+  let text = '';
+
+  for (let i = 0; i < 5; i++) {
+    text = text + '\n' + fixture;
+  }
+
+  const r = require('../lib/renderer').bind(hexo);
+  const r2 = require('hexo-renderer-marked/lib/renderer').bind(hexo);
+
+  it('hexo-lute', () => {
+    r({ text });
+  });
+
+  it('hexo-renderer-marked', () => {
+    r2({ text });
+  });
+});

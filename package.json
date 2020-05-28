@@ -28,11 +28,13 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.2.0",
+    "decache": "^4.6.0",
     "eslint": "^6.2.2",
     "eslint-config-hexo": "^3.0.0",
     "hexo": "hexojs/hexo",
     "hexo-renderer-marked": "^2.0.0",
     "hexo-util": "^2.1.0",
     "mocha": "^7.1.2"
-  }
+  },
+  "dependencies": {}
 }

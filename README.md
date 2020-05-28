@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/hexo-lute?style=flat-square)](https://www.npmjs.com/package/hexo-lute)
 [![MIT license](https://img.shields.io/npm/l/hexo-lute?style=flat-square)](./LICENSE)
-[![travis](https://img.shields.io/travis/com/sukkaw/hexo-renderer-lute?style=flat-square)](https://travis-ci.com/github/SukkaW/hexo-renderer-lute/)
+[![travis](https://img.shields.io/travis/com/sukkaw/hexo-renderer-lute?style=flat-square)](https://travis-ci.com/github/SukkaW/hexo-lute/)
 ![code size](https://img.shields.io/github/languages/code-size/sukkaw/hexo-lute?style=flat-square)
 
 A markdown renderer for [Hexo](https://hexo.io) based on [Lute](https://github.com/88250/lute).

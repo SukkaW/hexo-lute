@@ -385,9 +385,17 @@ describe('Benchmark', () => {
   const fixture = require('./fixture');
   let text = '';
 
-  for (let i = 0; i < 15; i++) {
-    text = text + '\n' + fixture;
+  for (let i = 0; i < 50; i++) {
+    text = text + '\n\n' + fixture;
   }
+
+  const defaultCfg = JSON.parse(JSON.stringify(Object.assign(hexo.config, {
+    marked: {}
+  })));
+
+  beforeEach(() => {
+    hexo.config = JSON.parse(JSON.stringify(defaultCfg));
+  });
 
   const r = require('../lib/renderer').bind(hexo);
   const r2 = require('hexo-renderer-marked/lib/renderer').bind(hexo);

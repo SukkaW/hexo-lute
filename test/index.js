@@ -281,7 +281,7 @@ describe('Lute features', () => {
 
     const result = r({ text });
 
-    result.should.eql('<p><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://example.com/image.png" alt="" /></p>\n');
+    result.should.eql('<p><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://example.com/image.png" alt="" /></p>\n');
   });
 
   it('lazyload: lazyload_src is empty', () => {
@@ -294,7 +294,7 @@ describe('Lute features', () => {
 
     const result = r({ text });
 
-    result.should.eql('<p><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://example.com/image.png" alt="" /></p>\n');
+    result.should.eql('<p><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://example.com/image.png" alt="" /></p>\n');
   });
 
   it('lazyload: lazyload_src is not empty', () => {
@@ -308,28 +308,6 @@ describe('Lute features', () => {
     const result = r({ text });
 
     result.should.eql('<p><img src="https://placehold.it" data-src="https://example.com/image.png" alt="" /></p>\n');
-  });
-
-  it('fix_term_typo: disabled by default', () => {
-    const text = [
-      '## jquery'
-    ].join('\n');
-
-    const result = r({ text });
-
-    result.should.eql('<h2 id="jquery">jquery</h2>\n');
-  });
-
-  it('fix_term_typo: enabled', () => {
-    const text = [
-      '## jquery'
-    ].join('\n');
-
-    ctx.config.lute.fix_term_typo = true;
-
-    const result = r({ text });
-
-    result.should.eql('<h2 id="jquery">jQuery</h2>\n');
   });
 
   it('auto_space: disabled by default', () => {
@@ -352,30 +330,6 @@ describe('Lute features', () => {
     const result = r({ text });
 
     result.should.eql('<p>你好 Hexo</p>\n');
-  });
-
-  it('chinese_punct: disabled by default', () => {
-    const text = [
-      'Hello, world.',
-      '你好,世界.'
-    ].join('\n');
-
-    const result = r({ text });
-
-    result.should.eql('<p>Hello, world.<br />\n你好,世界.</p>\n');
-  });
-
-  it('chinese_punct: enabled', () => {
-    const text = [
-      'Hello, world.',
-      '你好,世界.'
-    ].join('\n');
-
-    ctx.config.lute.chinese_punct = true;
-
-    const result = r({ text });
-
-    result.should.eql('<p>Hello, world.<br />\n你好，世界。</p>\n');
   });
 });
 
@@ -424,6 +378,10 @@ describe('Benchmark', () => {
     r2({ text: fixture });
     r2({ text: fixture });
     r2({ text: fixture });
+  });
+
+  it('test', () => {
+    r({ text: fixture }).should.eql(r2({ text: fixture }));
   });
 
   it('hexo-lute - large snippet', () => {

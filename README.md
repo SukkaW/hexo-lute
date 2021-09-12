@@ -54,7 +54,7 @@ lute:
 - `sanitize`: Basic XSS filter based on [bluemonday](https://github.com/microcosm-cc/bluemonday). Please just don't rely on it.
 - `lazyload`: Enable lazyload for image. The original `src` will then become `data-src`.
 - `lazyload_src`: Set a new `src` after original `src` became `data-src`. Useful for a placeholder (small "loading" gif things).
-  - If `lazyload` is set to `true` and `lazyload_src` is unset or empty, `data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==` will be use then.
+  - If `lazyload` is set to `true` and `lazyload_src` is unset or empty, `data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=` will be use then.
 - `github_todo_list`: GFM Todo List support.
 - `github_todo_list_class`: The class name for GFM Todo List support, useful for styling.
 - `fix_term_typo`: Enable some coding term correction (e.g. `Github => GitHub`, `jquery => jQuery`, etc.)
